@@ -19,7 +19,7 @@ This is useful to install on remote servers where you don't need many plugins an
 	sh ~/.vim_runtime/install_basic_vimrc.sh
 
 or
-curl https://github.com/liansp/vimrc/raw/master/vimrcs/basic.vim > ~/.vimrc
+curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
 
 ## How to install the Awesome version?
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following:
