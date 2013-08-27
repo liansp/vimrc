@@ -349,8 +349,10 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
+" Toggle NERD_tree
+map <leader>nn :NERDTreeToggle<cr>
+
 map q :q<cr>
-map nn :NERDTreeToggle<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
