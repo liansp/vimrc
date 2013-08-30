@@ -126,7 +126,7 @@ set t_vb=
 set tm=500
 
 " Add a bit extra margin to the left
-set foldcolumn=1
+set foldcolumn=0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -260,7 +260,7 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ [Line:\ %l\/%L]
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ [Line:\ %l\/%L]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -349,10 +349,34 @@ map <leader>q :e ~/buffer<cr>
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-" Toggle NERD_tree
-map <leader>nn :NERDTreeToggle<cr>
-
 map q :q<cr>
+
+nnoremap <F5> :silent update<Bar>silent !firefox %:p &<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => plugins config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
+" => Load pathogen paths
+""""""""""""""""""""""""""""""
+call pathogen#infect()
+call pathogen#helptags()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark 
+map <leader>nf :NERDTreeFind<cr>
+
+""""""""""""""""""""""""""""""
+" => bufExplorer plugin
+""""""""""""""""""""""""""""""
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerFindActive=1
+let g:bufExplorerSortBy='name'
+map <leader>o :BufExplorer<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
