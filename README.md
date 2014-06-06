@@ -10,9 +10,17 @@ There are two versions:
 I would of course recommend using the awesome version.
 
 ## liansp version install
-1. curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
-2. mkdir -p ~/.vim/autoload ~/.vim/bundle
-3. curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
+	curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+	mkdir -p ~/.vim/autoload ~/.vim/bundle
+	curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
+
+Some good plugins
+
+* [NERD Tree](https://github.com/scrooloose/nerdtree): A tree explorer
+* [bufexplorer.zip](https://github.com/vim-scripts/bufexplorer.zip): Buffer Explorer
+* [tagbar](https://github.com/majutsushi/tagbar): displays tags in a window
+* [jedi](https://github.com/davidhalter/jedi-vim): autocompletion library
+* [snipMate.vim](https://github.com/garbas/vim-snipmate): TextMate's snippets features in Vim
 
 ## How to install the Basic version?
 The basic version is basically just one file and no plugins. You can check out [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim).
