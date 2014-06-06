@@ -9,6 +9,10 @@ There are two versions:
 
 I would of course recommend using the awesome version.
 
+## liansp version install
+1. curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+2. mkdir -p ~/.vim/autoload ~/.vim/bundle
+3. curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
 
 ## How to install the Basic version?
 The basic version is basically just one file and no plugins. You can check out [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim).
@@ -17,11 +21,6 @@ This is useful to install on remote servers where you don't need many plugins an
 
 	git clone git://github.com/amix/vimrc.git ~/.vim_runtime
 	sh ~/.vim_runtime/install_basic_vimrc.sh
-
-or [liansp: simple way]
-1.curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
-2.mkdir -p ~/.vim/autoload ~/.vim/bundle
-3.curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
 
 ## How to install the Awesome version?
 The awesome version includes a lot of great plugins, configurations and color schemes that make Vim a lot better. To install it simply do following:
