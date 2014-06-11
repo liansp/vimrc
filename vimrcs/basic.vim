@@ -201,8 +201,8 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+"map j gj
+"map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
@@ -352,6 +352,7 @@ map <leader>pp :setlocal paste!<cr>
 map q :q<cr>
 
 nnoremap <F5> :silent update<Bar>silent !firefox %:p &<CR>
+nnoremap <silent> <F12> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins config
