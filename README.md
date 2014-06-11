@@ -10,9 +10,9 @@ There are two versions:
 I would of course recommend using the awesome version.
 
 ## liansp version install
-	curl https://raw.github.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
+	curl https://raw.githubusercontent.com/liansp/vimrc/master/vimrcs/basic.vim > ~/.vimrc
 	mkdir -p ~/.vim/autoload ~/.vim/bundle
-	curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
+	curl https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim > ~/.vim/autoload/pathogen.vim
 
 Some good plugins
 
