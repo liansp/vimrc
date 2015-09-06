@@ -260,14 +260,14 @@ set viminfo^=%
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ [Line:\ %l\/%L]
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ [Ln:%l\ Col:%c\ lines:%L]
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
-map 0 ^
+" map 0 ^
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
@@ -344,15 +344,13 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
+" map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
 
-map q :q<cr>
-
+nnoremap <leader>q :q<cr>
 nnoremap <F5> :silent update<Bar>silent !firefox %:p &<CR>
-nnoremap <silent> <F12> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => plugins config
@@ -369,6 +367,7 @@ call pathogen#helptags()
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark 
 map <leader>nf :NERDTreeFind<cr>
+let g:NERDTreeIgnore=['\.pyc$', '\.o$']
 
 """"""""""""""""""""""""""""""
 " => bufExplorer plugin
@@ -379,6 +378,16 @@ let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
+""""""""""""""""""""""""""""""
+" => tagbar plugin
+""""""""""""""""""""""""""""""
+let g:tagbar_sort = 0
+nnoremap <silent> <F12> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""
+" => emmet plugin
+""""""""""""""""""""""""""""""
+let g:user_emmet_leader_key='<Tab>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -399,7 +408,7 @@ function! VisualSelection(direction, extra_filter) range
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' *.' . a:extra_filter)
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'
