@@ -170,7 +170,7 @@ set noswapfile
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
-set expandtab
+"set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
@@ -206,7 +206,7 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
 map <space> /
-map <c-space> ?
+map <C-space> ?
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -379,6 +379,19 @@ let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
 
 """"""""""""""""""""""""""""""
+" => CTRL-P
+""""""""""""""""""""""""""""""
+let g:ctrlp_working_path_mode = 0
+
+let g:ctrlp_map = '<c-f>'
+map <leader>j :CtrlP<cr>
+map <C-b> :CtrlPBuffer<cr>
+map <C-a> :CtrlPMRU<cr>
+
+let g:ctrlp_max_height = 20
+let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
+
+""""""""""""""""""""""""""""""
 " => tagbar plugin
 """"""""""""""""""""""""""""""
 let g:tagbar_sort = 0
@@ -408,7 +421,8 @@ function! VisualSelection(direction, extra_filter) range
     if a:direction == 'b'
         execute "normal ?" . l:pattern . "^M"
     elseif a:direction == 'gv'
-        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' *.' . a:extra_filter)
+        "call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.' . a:extra_filter)
+        call CmdLine("Ack " . l:pattern . a:extra_filter)
     elseif a:direction == 'replace'
         call CmdLine("%s" . '/'. l:pattern . '/')
     elseif a:direction == 'f'
