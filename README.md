@@ -21,6 +21,8 @@ Some good plugins
 * [tagbar](https://github.com/majutsushi/tagbar): displays tags in a window
 * [jedi](https://github.com/davidhalter/jedi-vim): autocompletion library
 * [snipMate.vim](https://github.com/garbas/vim-snipmate): TextMate's snippets features in Vim
+* [ctrlp.vim](https://github.com/kien/ctrlp.vim): Fuzzy file, buffer, mru and tag finder.
+* [ack.vim](github.com/mileszs/ack.vim): Vim plugin for the Perl module / CLI script 'ack'
 
 ## How to install the Basic version?
 The basic version is basically just one file and no plugins. You can check out [basic.vim](https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim).
