@@ -27,6 +27,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+""""""""""""""""""""""""""""""
+" => Load pathogen paths
+""""""""""""""""""""""""""""""
+let s:vim_runtime = expand('<sfile>:p:h')."/.."
+call pathogen#infect(s:vim_runtime.'/sources_non_forked/{}')
+call pathogen#helptags()
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -384,3 +392,25 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
+
+
+""""""""""""""""""""""""""""""
+" => bufExplorer plugin
+""""""""""""""""""""""""""""""
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1
+let g:bufExplorerFindActive=1
+let g:bufExplorerSortBy='name'
+map <leader>o :BufExplorer<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Nerd Tree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden=0
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=35
+map <leader>nn :NERDTreeToggle<cr>
+map <leader>nb :NERDTreeFromBookmark<Space>
+map <leader>nf :NERDTreeFind<cr>
